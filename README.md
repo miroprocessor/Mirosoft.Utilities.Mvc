@@ -36,3 +36,24 @@ HtmlHelper methods to extend the power of ASP.Net MVC
    }
   }
   ```
+- **RequiredIf** Attribute   
+   http://miroprocessordev.blogspot.com/2012/08/aspnet-mvc-conditional-validation-using.html  
+    ```C#
+    public class RegisterationModel
+    {
+        [Required(ErrorMessage = "*")]
+        public String Name { get; set; }
+
+        [Required(ErrorMessage = "*")]
+        [Display(Name = "Gender")]
+        public Sex Sex { get; set; }
+
+        [RequiredIf("Sex", Sex.Male, "enter your age")]
+        public Int32? Age { get; set; }
+    }
+    public enum Sex
+    {
+        Female = 1,
+        Male = 2
+    }
+  ```
