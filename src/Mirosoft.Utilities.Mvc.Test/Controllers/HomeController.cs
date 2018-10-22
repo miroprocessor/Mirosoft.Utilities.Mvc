@@ -7,7 +7,7 @@ namespace Mirosoft.Utilities.Mvc.Test.Controllers
 {
     public class HomeController : Controller
     {
-        [OnlyAjaxRequest]
+        //[OnlyAjaxRequest]
         public ActionResult Index()
         {
             return View(GetProducts());
