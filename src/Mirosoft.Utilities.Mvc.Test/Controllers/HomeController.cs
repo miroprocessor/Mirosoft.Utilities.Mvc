@@ -1,4 +1,5 @@
-﻿using Mirosoft.Utilities.Mvc.Test.Models;
+﻿using Mirosoft.Utilities.Mvc.Attributes;
+using Mirosoft.Utilities.Mvc.Test.Models;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -6,6 +7,7 @@ namespace Mirosoft.Utilities.Mvc.Test.Controllers
 {
     public class HomeController : Controller
     {
+        [OnlyAjaxRequest]
         public ActionResult Index()
         {
             return View(GetProducts());
